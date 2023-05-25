@@ -1,0 +1,74 @@
+{% extends 'base/base.html' %}
+{% load filters %}  {# the name of the file #}
+{% load tags %}  {# the name of the file #}
+
+{% block page_title %}{{ title }} {% endblock %}
+
+
+{% block page_content %}
+
+    <div>
+    Original: {{ values }}
+    </div>
+
+    <div>
+        Odd: {{ values|odd }} {# 'odd' is the name of the filter #}
+    </div>
+
+    <div>
+        St_info: {% student_info student=student %}  {# 'odd' is the name of the filter #}
+    </div>
+        <h1>
+            {{ title }}: {{ value }}
+        </h1>
+        <h1>
+            {{ title|lower }}: {{ value }}
+        </h1>
+        <h1>
+            {{ now }}
+            {{ now|date:"Y-m-d" }}
+            "filtered:{{ now|app_style }}
+        </h1>
+        <!-- info["address"] in python -->
+        {{ info.address }}
+        {{ student_info }}
+        {{ student.get_info }}
+
+    {{ 2|add:4|add:6 }}
+
+    <div>
+        {% if students %}
+            {{ students|join:', ' }}
+        {% else %}
+            No students
+        {% endif %}
+    </div>
+
+    <h2>pure 'for'</h2>
+
+    <ul class="list-group">
+        {% for student in students %}
+            <li class="list-group-item">{{ student }}</li>
+        {% empty %}
+            <li class="list-group-item">No students</li>
+        {% endfor %}
+    </ul>
+    <h2>'for' with 'ifchanged'</h2>
+    <ul>
+        {% for student in students %}
+            {% ifchanged %}
+                <li>{{ student }}</li>
+            {% endifchanged %}
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+<!-- This is HTML commment -->
+{#in order to comment use ctrl+/#}
+{% comment %}
+ for multi line...
+{% endcomment %}
+
+{#</body>#}
+{#</html>#}
+
