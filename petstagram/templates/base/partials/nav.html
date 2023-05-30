@@ -1,0 +1,52 @@
+ {% load static %}
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <!-- Link to Home Page -->
+                {#will use the url template tag and map it to the view names that we wrote in the urlpatterns list#}
+                {# <a href="#">  #}
+                <a href="{% url 'index' %}">
+                    <img width="50px" src="{% static 'images/free-30-instagram-stories-icons23_122570.png' %}" alt="img1">
+                </a>
+
+                <!-- Link to Home Page -->
+                <a class="home" href="{% url 'index' %}">  {# same here #}
+                    <i>Petstagram</i>
+                </a>
+            </div>
+
+            <div class="nav-links">
+                <ul class="nav-group">
+                    <li class="nav-item">
+
+                        <!-- Link to Add Pet Page -->
+                        <a href="{% url 'add pet' %}">  {# same here #}
+                            <i>Add Pet</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <!-- Link to Add Photo Page -->
+                        <a href="{% url 'add photo' %}">  {# same here #}
+                            <i>Add Photo</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <!-- Link to Login Page -->
+                        <a href="{% url 'login user' %}">  {# same here #}
+                            <i>Login</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <!-- Link to Register Page -->
+                        <a href="{% url 'register user' %}">  {# then search for empty ones #}
+                            <i>Register</i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
