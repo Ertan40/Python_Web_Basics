@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{#   <form action="{% url 'model form' %}" method="post">#}
+       <form action="{% url 'model form' person.pk %}" method="post">
+       {% csrf_token %}
+       {{ model_form.as_p }}
+       <input type="submit" value="Submit model form"/>
+   </form>
+</body>
+</html>
