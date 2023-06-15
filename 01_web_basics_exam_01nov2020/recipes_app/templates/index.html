@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+
 {% block content %}
 
 
@@ -12,7 +13,8 @@
 
             <div class="item">
                 <h2>{{ recipe.title }}</h2>
-                <img class="detail-img" src="{{ recipe.image_url }}" alt="{{ recipe.title }}-image">
+                <img class="detail-img" src="{{ recipe.image_url }}"
+                     alt="{{ recipe.title }}-image">
                 <div class="recipe-info">
                      {{ recipe.description }}
                 </div>
@@ -27,7 +29,5 @@
         </div>
 
     </div>
-</body>
-</html>
 
 {% endblock %}
